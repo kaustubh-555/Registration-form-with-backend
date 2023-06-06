@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const path= require("path");
-const { login } = require("../controllers/loginController");
+const { login,createUser } = require("../controllers/loginController");
 const router = express.Router();
 
 router.get("/",(req,res)=>{
@@ -14,4 +14,7 @@ router.get("/scripts.js",(req,res)=>{
     res.sendFile(path.join(__dirname,"..","public","scripts.js"))
 })
 router.post("/login",login)
+
+router.post("/createUser",createUser)
+
 module.exports=router

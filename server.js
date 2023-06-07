@@ -4,8 +4,10 @@ const app = express()
 require("dotenv").config()
 const middleware = require("./middleware/mid")
 const route= require("./routes/route")
+const cookieParser = require('cookie-parser')
 app.use(express.json())
 app.use(middleware);
+app.use(cookieParser())
 
 app.use(route)
                     

@@ -1,6 +1,10 @@
 [
     {
-        "username":"kaustubh",
-        "password":"123"
+        "username": "KAS",
+        "password": "$2b$10$TnM.lS24HsRrx.MTTelStOIeqocff.BXCYIKNqHLazwHji.0JVh0."
+    },
+    {
+        "username": "kaustubh",
+        "password": "$2b$10$TZghVCZKPRqW6NAAlT/yC.NzflAAPL1uoJ02s.BYsbWj2XzjiTfFK"
     }
 ]

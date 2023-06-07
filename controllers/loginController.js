@@ -1,18 +1,20 @@
 const jwt = require("jsonwebtoken")
 const fspromises=require("fs").promises
 const path=require("path")
+const bcrypt=require("bcrypt")
+
 require("dotenv").config()
-var users = {
+let users = {
     userList : require("../models/users.json"),
     setUsers : (data)=>{
         users.userList = data;
     }
 }
 
-const login=(req,res)=>{
+const login= (req,res)=>{
     let name = req.body.username;
     let pass = req.body.password;
-    users.userList.forEach((element)=>{
+    users.userList.forEach(async (element)=>{
         console.log(element.username);
         console.log(name);
         let userobj={
@@ -20,8 +22,10 @@ const login=(req,res)=>{
             password:pass
         }
         if(element.username==name){
-            if(element.password==pass){
+            const validPassword= await bcrypt.compare(pass,element.password)
+            if(validPassword){
                 let token=jwt.sign(userobj,process.env.ACCESS_SECRET_KEY)
+                res.cookie('ACCESSTOKEN',token,{httpOnly:true})
                 res.json(token)
             }
         }
@@ -38,6 +42,7 @@ const createUser=async (req,res)=>{
         }
     })
     if(unique){
+        pass=await bcrypt.hash(pass,10);
         let oldUsers = users.userList;
         let newUserObj={
             username:name,

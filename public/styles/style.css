@@ -61,7 +61,7 @@
     border-radius: 10px;
     padding: 5px;
 }
-#btn{
+.submit-btn{
     width:200px;
     height:2rem;
     margin: 20px 20px 20px 350px;
@@ -69,7 +69,7 @@
     background-color:cornflowerblue;
     box-shadow: 8px 8px 8px #8888;
 }
-#btn:hover{
+.submit-btn:hover{
     box-shadow: 10px 10px 10px #8888;
     cursor: pointer;
 }

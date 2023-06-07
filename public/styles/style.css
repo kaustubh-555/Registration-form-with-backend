@@ -54,12 +54,13 @@
     padding:20px;
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin: 40px;
 }
 .input-feilds input{
     background-color: #f0f0f0;
     border-radius: 10px;
     padding: 5px;
+    margin-inline: 50px;
 }
 .submit-btn{
     width:200px;
@@ -72,4 +73,27 @@
 .submit-btn:hover{
     box-shadow: 10px 10px 10px #8888;
     cursor: pointer;
+}
+.auth{
+    display: flex;
+    margin:auto;
+    text-align: center;
+    padding: 50px;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+.msg{
+    padding: 50px;
+}
+.auth .submit-btn{
+    margin: 20px;
+}
+#signup-section{
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }

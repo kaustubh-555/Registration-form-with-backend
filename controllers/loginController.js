@@ -25,7 +25,8 @@ const login= (req,res)=>{
             const validPassword= await bcrypt.compare(pass,element.password)
             if(validPassword){
                 let token=jwt.sign(userobj,process.env.ACCESS_SECRET_KEY)
-                res.cookie('ACCESSTOKEN',token,{httpOnly:true})
+                // res.cookie('ACCESSTOKEN',token,{httpOnly:true})
+                res.cookie('ACCESSTOKEN',token)
                 res.json(token)
             }
         }
@@ -51,10 +52,10 @@ const createUser=async (req,res)=>{
         let newUsersList = [...oldUsers,newUserObj];
         users.setUsers(newUsersList)
         await fspromises.writeFile(path.join(__dirname,"..","models","users.json"),JSON.stringify(newUsersList))
-        res.json({"success":"true"})
+        res.json({"success":true})
     }
     else{
-        res.json({"success":'false'})
+        res.json({"success":false})
     }
 }
 

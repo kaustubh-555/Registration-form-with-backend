@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <section id="header">
+        <div id="logo">
+            <h1>WELCOME</h1>
+        </div>
+        <div id="menuItems">
+            <a href="#"><div class="navi">Home</div></a>
+            <a href="#"><div class="navi">events</div></a>
+            <a href="#"><div class="navi"> about</div></a>
+            <a href="#"><div class="navi"> contact</div></a>
+        </div>
+    </section>
+    <section id="main">
+        <form id="loginForm" action="" method="post">
+            <div class="input-feilds">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="username" required>
+            </div>
+            <div class="input-feilds">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="password" required>
+            </div>
+            <div >
+                <button id="btn" class="submit-btn" type="submit">Submit</button>
+            </div>
+        </form>
+        <div>
+            <div class="tokken">
+
+            </div>
+            <button class="submit-btn" id="token">
+                check tokken
+            </button>
+        </div>
+    </section>
+    
+
+    <script src="./LoginScript.js"></script>
+</body>
+</html>

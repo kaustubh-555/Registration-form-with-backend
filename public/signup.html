@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <title>SignUp</title>
 </head>
 <body>
     <section id="header">
@@ -19,25 +19,24 @@
             <a href="#"><div class="navi"> contact</div></a>
         </div>
     </section>
-    <section class="auth">
-        <div>
-            <div class="msg">
-                <h1>
-                    Please Login to continue
-                </h1>
+    <section id="signup-section">
+        <form>
+            <div id="msg">
+
             </div>
-            <div class="links">
-                <button class="submit-btn" id="loginBtn">
-                    Login
-                </button>
-                <button class="submit-btn" id="signupBtn">
-                    Signup
-                </button>
+            <div class="input-feilds">
+                <label for="username">Username </label>
+                <input type="text" id="username" placeholder="username" required>
             </div>
-        </div>
+            <div class="input-feilds">
+                <label for="password-Input">Password </label>
+                <input type="password" id="password-Input" placeholder="password" required>
+            </div>
+            <button type="submit" class="submit-btn" id="SignUp">
+                SignUp
+            </button>
+        </form>
     </section>
-
-
-    <script src="./script.js"></script>
+    <script src="./SignupScript.js"></script>
 </body>
 </html>

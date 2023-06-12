@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const path= require("path");
-const { login,createUser } = require("../controllers/loginController");
+const { login,createUser,verifyToken } = require("../controllers/loginController");
 const router = express.Router();
 
 router.get("/",(req,res)=>{
@@ -25,6 +25,10 @@ router.get("/LoginScript.js",(req,res)=>{
 router.get("/SignupScript.js",(req,res)=>{
     res.sendFile(path.join(__dirname,"..","public","SignupScript.js"))
 })
+router.get("/welcome.html",(req,res)=>{
+    res.sendFile(path.join(__dirname,"..","public","welcome.html"))
+})
+router.post("/authenticate",verifyToken);
 
 router.post("/login",login)
 

@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser')
 app.use(express.json())
 app.use(middleware);
 app.use(cookieParser())
-
 app.use(route)
                     
 app.listen(3500,()=>{

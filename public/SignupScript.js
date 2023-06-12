@@ -24,7 +24,6 @@ signup.addEventListener('click',(e)=>{
         else{
             t="User-name already exists !"
         }
-
         let msg = document.createElement('div');
         msg.style='width:500px;heignt:500px;text-align:center;';
         msg.innerHTML=t;
@@ -33,7 +32,12 @@ signup.addEventListener('click',(e)=>{
         div.appendChild(msg); 
         setTimeout(()=>{
             div.removeChild(msg);
-        },3000);
+        },2000);
+        if(status){
+            setTimeout(()=>{
+            window.location.href="./login.html";
+            },3000)
+        }
     });
     e.preventDefault();
 })
